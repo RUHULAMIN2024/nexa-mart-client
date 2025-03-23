@@ -148,11 +148,7 @@ const CouponTable = ({
   return (
     <div className="my-5">
       <NMTable columns={columns} data={coupons || []} />
-      <TablePagination
-        currentPage={currentPage}
-        totalPages={meta?.totalPage}
-        onPageChange={setCurrentPage}
-      />
+      <TablePagination totalPage={meta?.totalPage} />
     </div>
   );
 };

@@ -1,4 +1,5 @@
 "use client";
+import { Suspense } from "react"; // Import Suspense
 import ReCAPTCHA from "react-google-recaptcha";
 import { Button } from "@/components/ui/button";
 import {
@@ -21,7 +22,7 @@ import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useUser } from "@/context/UserContext";
 
-export default function LoginForm() {
+const LoginForm = () => {
   const form = useForm({
     resolver: zodResolver(loginSchema),
   });
@@ -131,4 +132,13 @@ export default function LoginForm() {
       </p>
     </div>
   );
-}
+};
+
+// Wrap the LoginForm with Suspense
+const SuspendedLoginForm = () => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <LoginForm />
+  </Suspense>
+);
+
+export default SuspendedLoginForm;

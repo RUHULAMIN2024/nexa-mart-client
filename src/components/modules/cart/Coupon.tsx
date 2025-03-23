@@ -32,7 +32,7 @@ export default function Coupon() {
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     try {
       const res = await dispatch(
-        fetchCoupon({ couponCode: data.coupon, subTotal, shopId })
+        fetchCoupon({ couponCode: data.coupon, subTotal, shopId }) as any
       ).unwrap();
       console.log(res, "inside component");
     } catch (error: any) {
