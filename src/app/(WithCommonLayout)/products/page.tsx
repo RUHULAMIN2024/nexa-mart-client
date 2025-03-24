@@ -1,6 +1,6 @@
 import AllProducts from "@/components/modules/products";
 import ProductBanner from "@/components/modules/products/banner";
-import OthersCard from "@/components/modules/products/others/OthersCard";
+import OthersCard from "@/components/shared/others/OthersCard";
 import CategoryCard from "@/components/ui/core/CategoryCard";
 import NMContainer from "@/components/ui/core/NMContainer";
 import { getAllCategories } from "@/services/Category";

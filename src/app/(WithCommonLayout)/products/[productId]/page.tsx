@@ -1,5 +1,7 @@
 import ProductBanner from "@/components/modules/products/banner";
 import ProductDetails from "@/components/modules/products/productDetails";
+import ProductInfo from "@/components/modules/products/productDetails/ProductInfo";
+import OthersCard from "@/components/shared/others/OthersCard";
 import NMContainer from "@/components/ui/core/NMContainer";
 import { getSingleProduct } from "@/services/Product";
 
@@ -19,6 +21,8 @@ const ProductDetailsPage = async ({
         path="Home - Products - Product Details"
       />
       <ProductDetails product={product} />
+      <ProductInfo product={product} />
+      <OthersCard />
     </NMContainer>
   );
 };
