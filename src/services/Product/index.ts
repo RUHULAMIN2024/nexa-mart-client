@@ -29,8 +29,6 @@ export const getAllProducts = async (
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_BASE_API}/product?limit=${limit}&page=${page}&${params}`,
       {
-        cache: "no-store",
-
         next: {
           tags: ["PRODUCT"],
         },
@@ -43,7 +41,24 @@ export const getAllProducts = async (
   }
 };
 
-// get single product
+// get Trending product
+export const getTrendingProduct = async () => {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_API}/product/trending`,
+      {
+        next: {
+          tags: ["PRODUCT"],
+        },
+      }
+    );
+    const data = await res.json();
+    return data;
+  } catch (error: any) {
+    return Error(error.message);
+  }
+};
+// get Single product
 export const getSingleProduct = async (productId: string) => {
   try {
     const res = await fetch(

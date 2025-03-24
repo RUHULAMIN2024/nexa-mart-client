@@ -7,8 +7,6 @@ import { revalidateTag } from "next/cache";
 export const getAllBrands = async () => {
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/brand`, {
-      cache: "no-store",
-
       next: {
         tags: ["Brands"],
       },

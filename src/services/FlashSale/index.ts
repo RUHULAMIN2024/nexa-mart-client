@@ -25,8 +25,6 @@ export const addFlashSale = async (productData: any): Promise<any> => {
 export const getFlashSaleProducts = async () => {
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/flash-sale`, {
-      cache: "no-store",
-
       next: {
         tags: ["PRODUCT"],
       },
